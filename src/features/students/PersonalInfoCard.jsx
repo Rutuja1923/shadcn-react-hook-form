@@ -5,10 +5,8 @@ import SelectInputField from "@/components/common/SelectInputField";
 import DatePickerField from "@/components/common/DatePickerField";
 import {
   GENDER_OPTIONS,
-  STUDENT_STATUS_OPTIONS,
   CATEGORY_OPTIONS,
 } from "@/constants/students/inputOptions";
-import { ASSIGNED_TO_OPTIONS } from "@/constants/common/assignees";
 
 function PersonalInfoCard() {
   const {
@@ -115,40 +113,6 @@ function PersonalInfoCard() {
             options={CATEGORY_OPTIONS}
             placeholder="Select category"
             error={errors.category?.message}
-          />
-        )}
-      </FormFieldWrapper>
-
-      <FormFieldWrapper
-        control={control}
-        name="status"
-        label="Status"
-        rules={{ required: "Status is required" }}
-        required
-      >
-        {(field) => (
-          <SelectInputField
-            {...field}
-            options={STUDENT_STATUS_OPTIONS}
-            placeholder="Select status"
-            error={errors.status?.message}
-          />
-        )}
-      </FormFieldWrapper>
-
-      <FormFieldWrapper
-        control={control}
-        name="assigned_to"
-        label="Assigned To"
-        rules={{ required: "Assigned To is required" }}
-        required
-      >
-        {(field) => (
-          <SelectInputField
-            {...field}
-            options={ASSIGNED_TO_OPTIONS}
-            placeholder="Select Assigned To"
-            error={errors.assigned_to?.message}
           />
         )}
       </FormFieldWrapper>

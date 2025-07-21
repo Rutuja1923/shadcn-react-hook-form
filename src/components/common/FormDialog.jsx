@@ -34,11 +34,11 @@ export function FormDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className={`
-          w-[90vw] max-w-[90vw] 
+          max-w-[90vw] 
           sm:max-w-[500px] 
           md:max-w-[700px] 
-          max-h-[90vh] 
-          overflow-y-auto  
+          h-[70vh] 
+          overflow-hidden 
           [&>button:last-child]:hidden 
           ${className}
         `}
@@ -62,7 +62,9 @@ export function FormDialog({
           {description && <DialogDescription>{description}</DialogDescription>}
         </DialogHeader>
 
-        {children}
+        <div className="h-full overflow-y-auto scrollbar-hide scroll-smooth space-y-4">
+          {children}
+        </div>
 
         {showFooter && (
           <DialogFooter>

@@ -3,6 +3,7 @@ import FormFieldWrapper from "@/components/common/FormFieldWrapper";
 import TextInputField from "@/components/common/TextInputField";
 import SelectInputField from "@/components/common/SelectInputField";
 import { ASSIGNED_TO_OPTIONS } from "@/constants/common/assignees";
+import { STUDENT_STATUS_OPTIONS } from "@/constants/students/inputOptions";
 
 function ContactInfoCard() {
   const {
@@ -137,6 +138,40 @@ function ContactInfoCard() {
             id="email"
             placeholder="Enter email address"
             error={errors.email?.message}
+          />
+        )}
+      </FormFieldWrapper>
+
+      <FormFieldWrapper
+        control={control}
+        name="status"
+        label="Status"
+        rules={{ required: "Status is required" }}
+        required
+      >
+        {(field) => (
+          <SelectInputField
+            {...field}
+            options={STUDENT_STATUS_OPTIONS}
+            placeholder="Select status"
+            error={errors.status?.message}
+          />
+        )}
+      </FormFieldWrapper>
+
+      <FormFieldWrapper
+        control={control}
+        name="assigned_to"
+        label="Assigned To"
+        rules={{ required: "Assigned To is required" }}
+        required
+      >
+        {(field) => (
+          <SelectInputField
+            {...field}
+            options={ASSIGNED_TO_OPTIONS}
+            placeholder="Select Assigned To"
+            error={errors.assigned_to?.message}
           />
         )}
       </FormFieldWrapper>
