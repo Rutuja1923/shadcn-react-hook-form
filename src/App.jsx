@@ -89,7 +89,6 @@ function App() {
 
       <Button onClick={handleAddNewStudent}>Add Student</Button>
 
-
       <StudentInputForm open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </>
   );
