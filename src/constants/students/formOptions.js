@@ -6,8 +6,6 @@ export const TAB_FIELDS = {
     "dob",
     "gender",
     "category",
-    "status",
-    "assigned_to",
   ],
   address_info: [
     "address",
@@ -17,7 +15,7 @@ export const TAB_FIELDS = {
     "medha_area",
     "pincode",
   ],
-  contact_info: ["phone", "email", "registered_by"],
+  contact_info: ["phone", "email", "registered_by", "status", "assigned_to"],
   income_source: [
     "income_level",
     "family_annual_income",
